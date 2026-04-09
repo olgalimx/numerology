@@ -7,13 +7,14 @@ import google.generativeai as genai
 # --- PROTECCIÓN DE API KEY ---
 # En Streamlit Cloud, esto se configura en "Settings > Secrets"
 #api_key = st.secrets["GOOGLE_API_KEY"]
+api_key = "AIzaSyB16igGs2ewPzal3jQNB5xiqcthtlTUzf8"
 # Intento de carga robusta
-if "GOOGLE_API_KEY" in st.secrets:
+"""if "GOOGLE_API_KEY" in st.secrets:
     api_key = st.secrets["GOOGLE_API_KEY"]
 else:
     st.error("⚠️ La clave 'GOOGLE_API_KEY' no se encuentra en los Secrets.")
     st.write("Variables detectadas:", list(st.secrets.to_dict().keys()))
-    st.stop() # Detiene la ejecución para que no salga el error feo
+    st.stop() # Detiene la ejecución para que no salga el error feo"""
 
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-flash-latest')
