@@ -136,7 +136,7 @@ if boton:
         
         # 2. Creas el Prompt
         prompt = prompt_instruccion = f"""
-        Actúa como un guía empático. Usa los siguientes datos numerológicos: {resultados_motor}.
+        Actúa como un guía empático. Usa los siguientes datos numerológicos: {resultados_mock}.
         Tu respuesta DEBE estar formateada en Markdown siguiendo esta estructura:
 
         1. Un título inspirador basado en el número principal, que es la misión de vida o Life Path.
