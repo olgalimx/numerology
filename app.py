@@ -1,7 +1,11 @@
 import unicodedata
-from datetime import datetime
+from datetime import date
 import streamlit as st
 import google.generativeai as genai
+
+# Definimos el rango permitido (desde 1900 hasta finales de este siglo)
+fecha_minima = date(1900, 1, 1)
+fecha_maxima = date(2100, 12, 31)
 
 
 # --- PROTECCIÓN DE API KEY ---
@@ -124,7 +128,12 @@ st.write("Descubre tu perfil desde una mirada empática y positiva.")
 # Formulario de entrada
 with st.form("datos_usuario"):
     nombre = st.text_input("Nombre completo")
-    fecha = st.date_input("Fecha de nacimiento")
+    fecha = st.date_input(
+    "Selecciona tu fecha de nacimiento",
+    value=date(2000, 1, 1), # Fecha por defecto al cargar
+    min_value=fecha_minima,
+    max_value=fecha_maxima
+    )
     boton = st.form_submit_button("Generar mi perfil")
 
 if boton:
