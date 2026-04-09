@@ -9,8 +9,8 @@ import google.generativeai as genai
 #api_key = st.secrets["GOOGLE_API_KEY"]
 #api_key = 
 # Intento de carga robusta
-if "LLAVE" in st.secrets:
-    api_key = st.secrets["LLAVE"]
+if GOOGLE_API_KEY in st.secrets:
+    api_key = st.secrets[GOOGLE_API_KEY]
 else:
     st.error("⚠️ La clave 'GOOGLE_API_KEY' no se encuentra en los Secrets.")
     st.write("Variables detectadas:", list(st.secrets.to_dict().keys()))
