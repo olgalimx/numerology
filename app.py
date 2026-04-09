@@ -131,7 +131,8 @@ if boton:
     with st.spinner("Calculando tus vibraciones..."):
         # 1. Llamas a tu motor (ejemplo hipotético)
         # resultados = calcular_perfil(nombre, fecha)
-        resultados_mock = perfil_numerologico(nombre, fecha) # Reemplazar por tu motor
+        fecha_texto = fecha.strftime("%Y-%m-%d")
+        resultados_mock = perfil_numerologico(nombre, fecha_texto) # Reemplazar por tu motor
         
         # 2. Creas el Prompt
         prompt = prompt_instruccion = f"""
