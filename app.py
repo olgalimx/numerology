@@ -1,11 +1,16 @@
 import unicodedata
 from datetime import date, datetime
 import streamlit as st
+from streamlit_gsheets import GSheetsConnection
+import pandas as pd
 import google.generativeai as genai
 
 # Definimos el rango permitido (desde 1900 hasta finales de este siglo)
 fecha_minima = date(1900, 1, 1)
 fecha_maxima = date(2100, 12, 31)
+
+# 1. Crear la conexión para el grabado de los datos del consultante
+conn = st.connection("gsheets", type=GSheetsConnection)
 
 
 # --- PROTECCIÓN DE API KEY ---
@@ -111,13 +116,13 @@ def perfil_numerologico(nombre_completo, fecha_nacimiento):
 # Aquí importarías tu motor: from motor_numerologico import calcular_perfil
 
 # Configuración de la página
-st.set_page_config(page_title="Espejo Numerológico", page_icon="✨")
+st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 
 
-st.title("✨ Espejo Numerológico")
+st.title("✨ Oráculo de Delfos")
 st.write("Descubre tu perfil desde una mirada empática y positiva.")
 
-# Formulario de entrada
+# FORMULARIO DE ENTRADA
 with st.form("datos_usuario"):
     nombre = st.text_input("Nombre completo")
     fecha = st.date_input(
@@ -129,11 +134,34 @@ with st.form("datos_usuario"):
     boton = st.form_submit_button("Generar mi perfil")
 
 if boton:
-    with st.spinner("Calculando tus vibraciones..."):
-        # 1. Llamas a tu motor (ejemplo hipotético)
-        # resultados = calcular_perfil(nombre, fecha)
+    with st.spinner("Calculando tu perfil..."):
+        # 1. Llamada al motor
+        
         fecha_texto = fecha.strftime("%Y-%m-%d")
-        resultados_mock = perfil_numerologico(nombre, fecha_texto) # Reemplazar por tu motor
+        resultados_mock = perfil_numerologico(nombre, fecha_texto) 
+
+        # GUARDAR EN GOOGLE SHEETS ---
+        try:
+            # Extraemos el número del Life Path (Camino de Vida) de tus resultados
+            # Ajusta 'Life Path' si el nombre de la clave en resultados_mock es distinto
+            camino_vida_valor = resultados_mock.get('mision_vida', 'N/A')
+
+            nuevo_perfil = pd.DataFrame([{
+                "Fecha de Consulta": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "Nombre": nombre,
+                "Fecha de Nacimiento": fecha_texto,
+                "Camino de Vida": camino_vida_valor
+            }])
+            
+            # Leemos, concatenamos y actualizamos
+            datos_actualizados = pd.concat([conn.read(), nuevo_perfil], ignore_index=True)
+            conn.update(data=datos_actualizados)
+        except Exception as e:
+            # Usamos st.error solo si quieres saber si falló durante las pruebas
+            # o puedes dejarlo pasar silenciosamente para no molestar al usuario
+            pass 
+        # ---------------------------------------
+
         
         # 2. Creas el Prompt
         prompt = prompt_instruccion = f"""
@@ -145,9 +173,9 @@ if boton:
         3. Una sección titulada '## El Desafío como Oportunidad' con un tono muy suave y constructivo.
         4. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
         5. Canaliza un mensaje inspirador y esperanzador para el consultante
-        Usa negritas para resaltar las palabras con mayor carga positiva.
+            Usa negritas para resaltar las palabras con mayor carga positiva.
         """
-        # 3. Llamas a Gemini
+        # 3. Llamada a Gemini
         response = model.generate_content(prompt)
         
         # 4. Muestras el resultado (Streamlit renderiza Markdown por defecto)
