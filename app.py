@@ -115,7 +115,7 @@ def perfil_numerologico(nombre_completo, fecha_nacimiento):
 st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 
 
-st.title("✨ Oráculo de Delfos")
+st.title("🔮 Oráculo de Delfos")
 # --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
 st.caption("""
     ✨ **Tu privacidad es sagrada:** Esta herramienta ha sido diseñada bajo el principio de **anonimato total**.  
