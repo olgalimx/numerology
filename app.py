@@ -142,24 +142,31 @@ if boton:
 
         # GUARDAR EN GOOGLE SHEETS ---
         try:
-            # Extraemos el número del Life Path (Camino de Vida) de tus resultados
-            # Ajusta 'Life Path' si el nombre de la clave en resultados_mock es distinto
-            camino_vida_valor = resultados_mock.get('mision_vida', 'N/A')
+            # 1. Intentar leer con ttl=0 para forzar datos frescos
+            try:
+                datos_actuales = conn.read(ttl=0)
+            except:
+                # Si falla al leer (hoja vacía), creamos un DataFrame con tus encabezados
+                datos_actuales = pd.DataFrame(columns=["Fecha de Consulta", "Nombre", "Fecha de Nacimiento", "Camino de Vida"])
 
-            nuevo_perfil = pd.DataFrame([{
-                "Fecha de Consulta": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "Nombre": nombre,
-                "Fecha de Nacimiento": fecha_texto,
-                "Camino de Vida": camino_vida_valor
+            # 2. Crear el nuevo registro
+            nuevo_registro = pd.DataFrame([{
+            "Fecha de Consulta": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "Nombre": nombre,
+            "Fecha de Nacimiento": fecha_texto,
+            "Camino de Vida": resultados_mock.get('mision_vida', 'N/A')
             }])
-            
-            # Leemos, concatenamos y actualizamos
-            datos_actualizados = pd.concat([conn.read(), nuevo_perfil], ignore_index=True)
-            conn.update(data=datos_actualizados)
-        except Exception as e:
-            # Usamos st.error solo si quieres saber si falló durante las pruebas
-            # o puedes dejarlo pasar silenciosamente para no molestar al usuario
-            pass 
+
+    # 3. Concatenar
+    # Nos aseguramos de que no haya columnas raras o índices duplicados
+    datos_para_subir = pd.concat([datos_actuales, nuevo_registro], ignore_index=True).dropna(axis=1, how='all')
+    
+    # 4. Actualizar
+    conn.update(data=datos_para_subir)
+    st.toast("¡Datos enviados a la hoja!") # Una pequeña notificación visual
+
+except Exception as e:
+    st.error(f"Error de conexión con Google: {e}")
         # ---------------------------------------
 
         
