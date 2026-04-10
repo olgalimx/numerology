@@ -116,6 +116,12 @@ st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 
 
 st.title("✨ Oráculo de Delfos")
+# --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
+st.caption("""
+    ✨ **Tu privacidad es sagrada:** Esta herramienta ha sido diseñada bajo el principio de **anonimato total**.  
+    Los nombres y fechas que ingresas solo existen durante los segundos que dura el cálculo.  
+    **No almacenamos ni registramos tu información personal.**
+""")
 st.write("Descubre tu perfil desde una mirada empática y positiva. Es importante que introduzcas tu nombre tal y como aparece en tu certificado de nacimiento.")
 
 # FORMULARIO DE ENTRADA
