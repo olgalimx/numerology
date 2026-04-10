@@ -1,5 +1,5 @@
 import unicodedata
-from datetime import date
+from datetime import date, datetime
 import streamlit as st
 import google.generativeai as genai
 
@@ -10,15 +10,7 @@ fecha_maxima = date(2100, 12, 31)
 
 # --- PROTECCIÓN DE API KEY ---
 # En Streamlit Cloud, esto se configura en "Settings > Secrets"
-#api_key = st.secrets["GOOGLE_API_KEY"]
-#api_key = 
-# Intento de carga robusta
-if 'GOOGLE_API_KEY' in st.secrets:
-    api_key = st.secrets['GOOGLE_API_KEY']
-else:
-    st.error("⚠️ La clave 'GOOGLE_API_KEY' no se encuentra en los Secrets.")
-    st.write("Variables detectadas:", list(st.secrets.to_dict().keys()))
-    st.stop() # Detiene la ejecución para que no salga el error feo
+api_key = st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-flash-latest')
@@ -43,7 +35,7 @@ LETRA_A_NUM = {letra: num for num, letras in PITAGORICA.items() for letra in let
 VOCALES = set("AEIOU")
 
 # -------------------------
-# Funciones auxiliares
+# FUNCIONES AUXILIARES
 # -------------------------
 
 def quitar_acentos(texto):
