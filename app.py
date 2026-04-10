@@ -165,8 +165,8 @@ if boton:
             conn.update(data=datos_para_subir)
             st.toast("¡Datos enviados a la hoja!") # Una pequeña notificación visual
 
-    except Exception as e:
-        st.error(f"Error de conexión con Google: {e}")
+        except Exception as e:
+            st.error(f"Error de conexión con Google: {e}")
         # ---------------------------------------
 
         
