@@ -1,16 +1,12 @@
 import unicodedata
 from datetime import date, datetime
 import streamlit as st
-from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 import google.generativeai as genai
 
 # Definimos el rango permitido (desde 1900 hasta finales de este siglo)
 fecha_minima = date(1900, 1, 1)
 fecha_maxima = date(2100, 12, 31)
-
-# 1. Crear la conexión para el grabado de los datos del consultante
-conn = st.connection("gsheets", type=GSheetsConnection)
 
 
 # --- PROTECCIÓN DE API KEY ---
@@ -140,35 +136,7 @@ if boton:
         fecha_texto = fecha.strftime("%Y-%m-%d")
         resultados_mock = perfil_numerologico(nombre, fecha_texto) 
 
-        # GUARDAR EN GOOGLE SHEETS ---
-        try:
-            # 1. Intentar leer con ttl=0 para forzar datos frescos
-            try:
-                datos_actuales = conn.read(ttl=0)
-            except:
-                # Si falla al leer (hoja vacía), creamos un DataFrame con tus encabezados
-                datos_actuales = pd.DataFrame(columns=["Fecha de Consulta", "Nombre", "Fecha de Nacimiento", "Camino de Vida"])
-
-            # 2. Crear el nuevo registro
-            nuevo_registro = pd.DataFrame([{
-            "Fecha de Consulta": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "Nombre": nombre,
-            "Fecha de Nacimiento": fecha_texto,
-            "Camino de Vida": resultados_mock.get('mision_vida', 'N/A')
-            }])
-
-            # 3. Concatenar
-            # Nos aseguramos de que no haya columnas raras o índices duplicados
-            datos_para_subir = pd.concat([datos_actuales, nuevo_registro], ignore_index=True).dropna(axis=1, how='all')
-    
-            # 4. Actualizar
-            conn.update(data=datos_para_subir)
-            st.toast("¡Datos enviados a la hoja!") # Una pequeña notificación visual
-
-        except Exception as e:
-            st.error(f"Error de conexión con Google: {e}")
-        # ---------------------------------------
-
+        
         
         # 2. Creas el Prompt
         prompt = prompt_instruccion = f"""
