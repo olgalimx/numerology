@@ -162,3 +162,6 @@ if boton:
         # 4. Muestras el resultado (Streamlit renderiza Markdown por defecto)
         st.markdown("---")
         st.markdown(response.text)
+st.markdown("---")
+if st.button("🏛️ Regresar al inicio del Templo"):
+    st.rerun()
