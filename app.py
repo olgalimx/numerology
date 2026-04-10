@@ -171,6 +171,6 @@ if boton:
                 st.error(f"Hubo una interrupción en la señal estelar: {e}")
         
 
-st.markdown("---")
-if st.button("🏛️ Regresar al inicio del Templo"):
-    st.rerun()
+#st.markdown("---")
+#if st.button("🏛️ Regresar al inicio del Templo"):
+#    st.rerun()
