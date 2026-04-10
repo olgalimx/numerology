@@ -116,13 +116,13 @@ st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 
 
 st.title("✨ Oráculo de Delfos")
-st.write("Descubre tu perfil desde una mirada empática y positiva.")
+st.write("Descubre tu perfil desde una mirada empática y positiva. Es importante que introduzcas tu nombre tal y como aparece en tu certificado de nacimiento.")
 
 # FORMULARIO DE ENTRADA
 with st.form("datos_usuario"):
     nombre = st.text_input("Nombre completo")
     fecha = st.date_input(
-    "Selecciona tu fecha de nacimiento",
+    "Selecciona tu fecha de nacimiento en formato año-mes-día",
     value=date(2000, 1, 1), # Fecha por defecto al cargar
     min_value=fecha_minima,
     max_value=fecha_maxima
