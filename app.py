@@ -157,16 +157,16 @@ if boton:
             "Camino de Vida": resultados_mock.get('mision_vida', 'N/A')
             }])
 
-    # 3. Concatenar
-    # Nos aseguramos de que no haya columnas raras o índices duplicados
-    datos_para_subir = pd.concat([datos_actuales, nuevo_registro], ignore_index=True).dropna(axis=1, how='all')
+            # 3. Concatenar
+            # Nos aseguramos de que no haya columnas raras o índices duplicados
+            datos_para_subir = pd.concat([datos_actuales, nuevo_registro], ignore_index=True).dropna(axis=1, how='all')
     
-    # 4. Actualizar
-    conn.update(data=datos_para_subir)
-    st.toast("¡Datos enviados a la hoja!") # Una pequeña notificación visual
+            # 4. Actualizar
+            conn.update(data=datos_para_subir)
+            st.toast("¡Datos enviados a la hoja!") # Una pequeña notificación visual
 
-except Exception as e:
-    st.error(f"Error de conexión con Google: {e}")
+    except Exception as e:
+        st.error(f"Error de conexión con Google: {e}")
         # ---------------------------------------
 
         
