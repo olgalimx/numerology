@@ -137,31 +137,40 @@ with st.form("datos_usuario"):
 
 if boton:
     with st.spinner("Calculando tu perfil..."):
-        # 1. Llamada al motor
+        try:
+            # 1. Llamada al motor
         
-        fecha_texto = fecha.strftime("%Y-%m-%d")
-        resultados_mock = perfil_numerologico(nombre, fecha_texto) 
+            fecha_texto = fecha.strftime("%Y-%m-%d")
+            resultados_mock = perfil_numerologico(nombre, fecha_texto) 
 
-        
-        
-        # 2. Creas el Prompt
-        prompt = prompt_instruccion = f"""
-        Actúa como un guía empático. Usa los siguientes datos numerológicos: {resultados_mock}.
-        Tu respuesta DEBE estar formateada en Markdown siguiendo esta estructura:
+            # 2. Creas el Prompt
+            prompt = prompt_instruccion = f"""
+            Actúa como un guía empático. Usa los siguientes datos numerológicos: {resultados_mock}.
+            Tu respuesta DEBE estar formateada en Markdown siguiendo esta estructura:
 
-        1. Un título inspirador basado en el número principal, que es la misión de vida o Life Path.
-        2. Una sección titulada '## Tu Esencia' usando viñetas para las fortalezas.
-        3. Una sección titulada '## El Desafío como Oportunidad' con un tono muy suave y constructivo.
-        4. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
-        5. Canaliza un mensaje inspirador y esperanzador para el consultante
-            Usa negritas para resaltar las palabras con mayor carga positiva.
-        """
-        # 3. Llamada a Gemini
-        response = model.generate_content(prompt)
+            1. Un título inspirador basado en el número principal, que es la misión de vida o Life Path.
+            2. Una sección titulada '## Tu Esencia' usando viñetas para las fortalezas.
+            3. Una sección titulada '## El Desafío como Oportunidad' con un tono muy suave y constructivo.
+            4. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
+            5. Canaliza un mensaje inspirador y esperanzador para el consultante
+                Usa negritas para resaltar las palabras con mayor carga positiva.
+            """
+            # 3. Llamada a Gemini
+            response = model.generate_content(prompt)
         
-        # 4. Muestras el resultado (Streamlit renderiza Markdown por defecto)
-        st.markdown("---")
-        st.markdown(response.text)
+            # 4. Muestras el resultado (Streamlit renderiza Markdown por defecto)
+            st.markdown("---")
+            st.markdown(response.text)
+        except Exception as e:
+            # Si el error es por exceso de uso (Código 429)
+            if "429" in str(e) or "ResourceExhausted" in str(e):
+                st.error("🏛️ **El Oráculo necesita un breve descanso.**")
+                st.info("Para mantener este servicio gratuito, hay un límite de consultas por minuto. Por favor, espera **60 segundos** y vuelve a intentarlo.")
+            else:
+                # Otros errores (conexión, etc.)
+                st.error(f"Hubo una interrupción en la señal estelar: {e}")
+        
+
 st.markdown("---")
 if st.button("🏛️ Regresar al inicio del Templo"):
     st.rerun()
