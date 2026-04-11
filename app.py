@@ -150,9 +150,11 @@ if boton:
 
             1. Un título inspirador basado en el número principal, que es la misión de vida o Life Path.
             2. Una sección titulada '## Tu Esencia' usando viñetas para las fortalezas.
-            3. Una sección titulada '## El Desafío como Oportunidad' con un tono muy suave y constructivo.
-            4. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
-            5. Canaliza un mensaje inspirador y esperanzador para el consultante
+            3. Explica el concepto de luz y sombra del potencial de misión de vida o life path, como una invitación a 
+               reflexionar el status en que se encuentre el consultante. 
+            4. Una sección titulada '## El Desafío como Oportunidad' con un tono muy suave y constructivo.
+            5. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
+            6. Canaliza un mensaje inspirador y esperanzador para el consultante
                 Usa negritas para resaltar las palabras con mayor carga positiva.
             """
             # 3. Llamada a Gemini
