@@ -172,17 +172,18 @@ if boton:
                 # Otros errores (conexión, etc.)
                 st.error(f"Hubo una interrupción en la señal estelar: {e}")
         
-# Añadimos un espacio y una línea sutil para separar la lectura del contador
-st.write("\n") 
-st.write("---") 
-
-# Centramos el contador usando columnas de Streamlit
+#Para mostrar el contador de visitas
+st.write("---")
 col1, col2, col3 = st.columns([1, 1, 1])
 
 with col2:
-    st.write("✨ *Consultas al Oráculo* ✨")
-    # RECUERDA: Cambia 'tu-usuario' y 'tu-repo' por tus datos reales de GitHub
-    st.markdown("![Visitas](https://hits.dwyl.com/olgalimx/numerology.svg?style=flat-square&color=gold)")
+    # Este enlace genera un badge que dice "Visitas" a la izquierda
+    # REEMPLAZA: tu-usuario/tu-repo
+    user_repo = "olgalimx/numerology" 
+    url_final = f"https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2F{user_repo}.json&label=Visitas&color=gold&style=flat-square"
+    
+    st.markdown(f"[![Visitas]({url_final})](https://hits.dwyl.com/{user_repo})")
+    
 #st.markdown("---")
 #if st.button("🏛️ Regresar al inicio del Templo"):
 #    st.rerun()
