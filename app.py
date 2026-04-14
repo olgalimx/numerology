@@ -147,7 +147,7 @@ if boton:
             prompt = prompt_instruccion = f"""
             Actúa como un guía empático. Usa los siguientes datos numerológicos: {resultados_mock}.
             Tu respuesta DEBE estar formateada en Markdown siguiendo esta estructura:
-
+            0. Muestra el nombre del core number y su valor antes de hacer la lectura maravillosa de su perfil.
             1. Un título inspirador basado en el número principal, que es la misión de vida o Life Path.
             2. Una sección titulada '## Tu Esencia' usando viñetas para las fortalezas.
             3. Explica, de forma breve y clara, el concepto de luz y sombra del potencial de misión de vida o life path, 
