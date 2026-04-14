@@ -172,7 +172,12 @@ if boton:
                 # Otros errores (conexión, etc.)
                 st.error(f"Hubo una interrupción en la señal estelar: {e}")
         
-
+with st.sidebar:
+    st.markdown("---") # Una línea divisora
+    st.write("✨ Consultas realizadas:")
+    # Reemplaza 'tu-usuario' y 'tu-repo' con tus datos reales
+    st.markdown("![Visitas](https://hits.dwyl.com/olgalimx/numerology.svg?style=flat-square&color=gold)")
+    
 #st.markdown("---")
 #if st.button("🏛️ Regresar al inicio del Templo"):
 #    st.rerun()
