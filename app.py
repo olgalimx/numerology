@@ -172,12 +172,17 @@ if boton:
                 # Otros errores (conexión, etc.)
                 st.error(f"Hubo una interrupción en la señal estelar: {e}")
         
-with st.sidebar:
-    st.markdown("---") # Una línea divisora
-    st.write("✨ Consultas realizadas:")
-    # Reemplaza 'tu-usuario' y 'tu-repo' con tus datos reales
+# Añadimos un espacio y una línea sutil para separar la lectura del contador
+st.write("\n") 
+st.write("---") 
+
+# Centramos el contador usando columnas de Streamlit
+col1, col2, col3 = st.columns([1, 1, 1])
+
+with col2:
+    st.write("✨ *Consultas al Oráculo* ✨")
+    # RECUERDA: Cambia 'tu-usuario' y 'tu-repo' por tus datos reales de GitHub
     st.markdown("![Visitas](https://hits.dwyl.com/olgalimx/numerology.svg?style=flat-square&color=gold)")
-    
 #st.markdown("---")
 #if st.button("🏛️ Regresar al inicio del Templo"):
 #    st.rerun()
