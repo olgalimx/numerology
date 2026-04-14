@@ -10,7 +10,6 @@ fecha_maxima = date(2100, 12, 31)
 
 
 # --- PROTECCIÓN DE API KEY ---
-# En Streamlit Cloud, esto se configura en "Settings > Secrets"
 api_key = st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key=api_key)
@@ -127,7 +126,7 @@ with st.form("datos_usuario"):
     nombre = st.text_input("Nombre completo")
     fecha = st.date_input(
     "Selecciona o introduce directamente tu fecha de nacimiento en formato año-mes-día",
-    value=date(2000, 1, 1), # Fecha por defecto al cargar
+    value=date(2000, 1, 1), 
     min_value=fecha_minima,
     max_value=fecha_maxima
     )
@@ -141,7 +140,7 @@ if boton:
             fecha_texto = fecha.strftime("%Y-%m-%d")
             resultados_mock = perfil_numerologico(nombre, fecha_texto) 
 
-            # 2. Creas el Prompt
+            # 2. Crear el Prompt
             prompt = prompt_instruccion = f"""
             Actúa como un guía empático. Usa los siguientes datos numerológicos: {resultados_mock}.
             Tu respuesta DEBE estar formateada en Markdown siguiendo esta estructura:
@@ -158,7 +157,7 @@ if boton:
             # 3. Llamada a Gemini
             response = model.generate_content(prompt)
         
-            # 4. Muestras el resultado (Streamlit renderiza Markdown por defecto)
+            # 4. Muestra el resultado (Streamlit renderiza Markdown por defecto)
             st.markdown("---")
             st.markdown(response.text)
         except Exception as e:
@@ -176,10 +175,8 @@ col1, col2, col3 = st.columns([1, 1, 1])
 
 with col2:
     # Este enlace genera un badge que dice "Visitas" a la izquierda
-    # REEMPLAZA: tu-usuario/tu-repo
     user_repo = "olgalimx/numerology" 
     url_final = f"https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2F{user_repo}.json&label=Visitas&color=gold&style=flat-square"
-    
     st.markdown(f"[![Visitas]({url_final})](https://hits.dwyl.com/{user_repo})")
     
 #st.markdown("---")
