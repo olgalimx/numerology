@@ -109,13 +109,11 @@ def perfil_numerologico(nombre_completo, fecha_nacimiento):
     }
 
 
-# Aquí importarías tu motor: from motor_numerologico import calcular_perfil
 
 # Configuración de la página
 st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
-
-
 st.title("🏛️ Oráculo de Delfos")
+
 # --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
 st.caption("""
     ✨ **Tu privacidad es sagrada:** Esta herramienta ha sido diseñada bajo el principio de **anonimato total**.  
@@ -167,7 +165,7 @@ if boton:
             # Si el error es por exceso de uso (Código 429)
             if "429" in str(e) or "ResourceExhausted" in str(e):
                 st.error("🏛️ **El Oráculo necesita un breve descanso.**")
-                st.info("Para mantener este servicio gratuito, hay un límite de consultas por minuto. Por favor, espera **60 segundos** y vuelve a intentarlo.")
+                st.info("Para mantener este servicio gratuito, hay un límite de consultas por minuto. Por favor, vuelve a intentarlo más tarde.")
             else:
                 # Otros errores (conexión, etc.)
                 st.error(f"Hubo una interrupción en la señal estelar: {e}")
