@@ -31,7 +31,6 @@ PITAGORICA = {
 
 # Invertir diccionario
 LETRA_A_NUM = {letra: num for num, letras in PITAGORICA.items() for letra in letras}
-
 VOCALES = set("AEIOU")
 
 
@@ -110,7 +109,6 @@ def perfil_numerologico(nombre_completo, fecha_nacimiento):
 
 # Configuración de la página
 st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
-#st.title("🏛️ Oráculo de Delfos")
 st.markdown(
     """
     <div style="text-align: center; padding: 10px;">
@@ -121,10 +119,10 @@ st.markdown(
             letter-spacing: 3px;
             text-transform: uppercase;
         ">
-            🌌 El Oráculo de Delfos
+            🏛️ El Oráculo de Delfos
         </h1>
         <p style="color: #708090; font-style: italic; margin-top: -10px; font-size: 18px;">
-            Donde los números revelan el destino
+            Descubre la melodía de tu esencia; tú diriges la obra
         </p>
     </div>
     """, 
