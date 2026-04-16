@@ -132,24 +132,46 @@ st.markdown(
 )
 
 
-# Definimos el contenido
-html_content = """
-<div style="background-color: #FDFBF7; padding: 20px; border: 2px solid #D4AF37; border-radius: 12px; font-family: serif; color: #2C3E50;">
-    <h2 style="color: #B8860B; text-align: center;">👁️‍🗨️ Tu Privacidad es Sagrada</h2>
-    <p style="text-align: center; font-style: italic;">"Esta herramienta ha sido diseñada bajo el principio de <b>anonimato total</b>."</p>
-    <hr style="border: 0; border-top: 1px solid #D4AF37;">
-    <p>✨ <b>Efimeridad Numérica:</b> Los datos solo existen durante el cálculo.</p>
-    <p>🛡️ <b>Sin Registros:</b> Tu rastro se borra con el viento de Delfos.</p>
-    <div style="background-color: #FFF9E6; padding: 15px; border: 1px solid #E6D5A7;">
-        <p style="font-weight: bold; color: #8E6D1A; text-align: center;">⚖️ AVISO IMPORTANTE</p>
-        <p>El Oráculo es gratuito. Para mantener la armonía, el modelo tiene un cupo limitado de consultas diarias.</p>
-        <p style="text-align: center; color: #B8860B; font-weight: bold;">Si alcanzaste el límite, las frecuencias han completado su ciclo. ¡Vuelve más tarde!</p>
+# Definimos el contenido con CSS adaptable
+html_responsivo = """
+<div style="
+    background-color: #FDFBF7; 
+    padding: 15px; 
+    border: 2px solid #4B0082; 
+    border-radius: 12px; 
+    font-family: serif; 
+    color: #2C3E50;
+    max-width: 95%; /* Evita que choque con los bordes del móvil */
+    margin: auto;
+">
+    <h2 style="color: #4B0082; text-align: center; font-size: 22px;">🏛️ Tu Privacidad es Sagrada</h2>
+    
+    <p style="text-align: center; font-style: italic; font-size: 16px;">
+        "Anonimato total en cada cálculo."
+    </p>
+
+    <hr style="border: 0; border-top: 1px solid #C0C0C0;">
+
+    <div style="font-size: 14px;">
+        <p>✨ <b>Efimeridad:</b> Los datos solo existen durante el cálculo.</p>
+        <p>🛡️ <b>Sin Registros:</b> Tu rastro se borra con el viento de Delfos.</p>
+    </div>
+
+    <div style="background-color: #F4F0FA; padding: 12px; border-radius: 8px; border: 1px solid #4B0082;">
+        <p style="font-weight: bold; color: #4B0082; text-align: center; font-size: 15px; margin-bottom: 5px;">⚖️ AVISO IMPORTANTE</p>
+        <p style="font-size: 13px; line-height: 1.4;">
+            El Oráculo es gratuito. Para mantener la armonía, el modelo tiene un cupo limitado de consultas diarias.
+        </p>
+        <p style="font-size: 14px; text-align: center; color: #4B0082; font-weight: bold; margin-top: 8px;">
+            Si alcanzaste el límite, las frecuencias han completado su ciclo. ¡Vuelve más tarde!
+        </p>
     </div>
 </div>
 """
 
-# Forzamos el renderizado
-st.components.v1.html(html_content, height=400, scrolling=False)
+# USAMOS st.components.v1.html PERO CON AJUSTES
+# El truco es calcular el height necesario o usar scrolling=True
+st.components.v1.html(html_responsivo, height=500, scrolling=True)
 # --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
 #st.markdown(mensaje_oraculo, unsafe_allow_html=True)
 
