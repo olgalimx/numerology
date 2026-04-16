@@ -233,6 +233,6 @@ with col2:
     url_final = f"https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2F{user_repo}.json&label=Visitas&color=gold&style=flat-square"
     st.markdown(f"[![Visitas]({url_final})](https://hits.dwyl.com/{user_repo})")
     
-#st.markdown("---")
-#if st.button("🏛️ Regresar al inicio del Templo"):
-#    st.rerun()
+st.write("---") # Una línea divisoria sutil
+st.write("¿Deseas profundizar en tu partitura numérica?")
+st.link_button("Solicitar Lectura Completa", "mailto:tu-correo@ejemplo.com")
