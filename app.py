@@ -170,9 +170,9 @@ html_responsivo = """
 # USAMOS st.components.v1.html PERO CON AJUSTES
 # El truco es calcular el height necesario o usar scrolling=True
 st.components.v1.html(html_responsivo, height=500, scrolling=True)
-# --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
-#st.markdown(mensaje_oraculo, unsafe_allow_html=True)
 
+
+# --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
 st.write("Descubre tu perfil desde una mirada empática y positiva. Es importante que introduzcas tu nombre tal y como aparece en tu certificado de nacimiento.")
 
 # FORMULARIO DE ENTRADA
@@ -187,10 +187,9 @@ with st.form("datos_usuario"):
     boton = st.form_submit_button("Generar mi perfil")
 
 if boton:
-    with st.spinner("Calculando tu perfil..."):
+    with st.spinner("Espera un momento, estoy calculando tu perfil..."):
         try:
             # 1. Llamada al motor
-        
             fecha_texto = fecha.strftime("%Y-%m-%d")
             resultados_mock = perfil_numerologico(nombre, fecha_texto) 
 
@@ -207,6 +206,8 @@ if boton:
             5. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
             6. Canaliza un mensaje inspirador y esperanzador para el consultante
                 Usa negritas para resaltar las palabras con mayor carga positiva.
+            7. Menciona los análisis adicionales que puedes hacer para una lectura más completa e invita al consultante
+               a hacer clic en el botón para solicitar una lectura más completa sin costo.
             """
             # 3. Llamada a Gemini
             response = model.generate_content(prompt)
