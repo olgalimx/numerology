@@ -115,16 +115,13 @@ st.title("🏛️ Oráculo de Delfos")
 
 # --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
 st.caption("""
-    ✨### **Tu privacidad es sagrada:** Esta herramienta ha sido diseñada bajo el principio de **anonimato total**.  
+    ✨**Tu privacidad es sagrada:** Esta herramienta ha sido diseñada bajo el principio de **anonimato total**.  
     Los nombres y fechas que ingresas solo existen durante los segundos que dura el cálculo.  
     **No almacenamos ni registramos tu información personal.**  
-    ### **Aviso importante**: El Oráculo de Delfos es un espacio de acceso gratuito dedicado a descifrar la vibración de los números en tu vida.
+    **Aviso importante**: El Oráculo de Delfos es un espacio de acceso gratuito dedicado a descifrar la vibración de los números en tu vida.
     Para mantener la precisión de los cálculos y la armonía del sistema, nuestro modelo cuenta con un cupo limitado de consultas diarias. 
     Si has recibido el aviso de límite alcanzado, significa que las frecuencias numéricas del momento han completado su ciclo.  
-    ### **"Todo es número, pero cada número tiene su tiempo."** 
-    La matriz vibracional necesita un momento para recalibrarse. Te invitamos a regresar más tarde: cuando los números vuelvan a alinearse, 
-    tu lectura estará lista para revelarte el camino con mayor claridad. 
-""")
+    """)
 st.write("Descubre tu perfil desde una mirada empática y positiva. Es importante que introduzcas tu nombre tal y como aparece en tu certificado de nacimiento.")
 
 # FORMULARIO DE ENTRADA
