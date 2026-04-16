@@ -65,10 +65,6 @@ mensaje_final = r'''
 
 st.markdown(mensaje_final, unsafe_allow_html=True)
 
-
-
-
-
 # -------------------------
 # FUNCIONES AUXILIARES
 # -------------------------
