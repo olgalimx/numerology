@@ -118,7 +118,7 @@ st.title("🏛️ Oráculo de Delfos")
 # Definimos el contenido
 html_content = """
 <div style="background-color: #FDFBF7; padding: 20px; border: 2px solid #D4AF37; border-radius: 12px; font-family: serif; color: #2C3E50;">
-    <h2 style="color: #B8860B; text-align: center;">🏛️ Tu Privacidad es Sagrada</h2>
+    <h2 style="color: #B8860B; text-align: center;">👁️‍🗨️ Tu Privacidad es Sagrada</h2>
     <p style="text-align: center; font-style: italic;">"Esta herramienta ha sido diseñada bajo el principio de <b>anonimato total</b>."</p>
     <hr style="border: 0; border-top: 1px solid #D4AF37;">
     <p>✨ <b>Efimeridad Numérica:</b> Los datos solo existen durante el cálculo.</p>
