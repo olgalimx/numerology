@@ -36,41 +36,46 @@ VOCALES = set("AEIOU")
 
 import streamlit as st
 
-# Versión optimizada y robusta
-mensaje_limpio = '''
+import streamlit as st
+
+# Usamos comillas simples triples para envolver todo el bloque
+# y comillas dobles para los estilos CSS internos.
+mensaje_final = '''
 <div style="
     background-color: #FDFBF7; 
     padding: 20px; 
     border: 2px solid #D4AF37; 
-    border-radius: 10px;
-    font-family: "serif";
+    border-radius: 12px;
+    font-family: 'serif';
+    color: #2C3E50;
 ">
     <h2 style="color: #B8860B; text-align: center; margin-top: 0;">🏛️ Tu Privacidad es Sagrada</h2>
     
-    <p style="text-align: center; font-style: italic; color: #5D6D7E; font-size: 1.1em;">
+    <p style="text-align: center; font-style: italic; color: #5D6D7E; font-size: 18px;">
         "Esta herramienta ha sido diseñada bajo el principio de <b>anonimato total</b>."
     </p>
 
-    <hr style="border: 0; border-top: 1px solid #D4AF37;">
+    <hr style="border: 0; border-top: 1px solid #D4AF37; margin: 15px 0;">
 
-    <ul style="list-style-type: "✨ "; color: #2C3E50; font-size: 15px;">
-        <li><b>Efimeridad Numérica:</b> Los nombres y fechas ingresados solo existen durante el cálculo.</li>
-        <li><b>Sin Registros:</b> No almacenamos tu información personal. Tu rastro se borra con el viento de Delfos.</li>
-    </ul>
+    <div style="font-size: 16px; margin-bottom: 20px;">
+        <p>✨ <b>Efimeridad Numérica:</b> Los nombres y fechas ingresados solo existen durante el cálculo.</p>
+        <p>🛡️ <b>Sin Registros:</b> No almacenamos tu información personal. Tu rastro se borra con el viento de Delfos.</p>
+    </div>
 
-    <div style="background-color: #FFF9E6; padding: 15px; border-radius: 8px; margin-top: 20px;">
-        <p style="font-weight: bold; color: #8E6D1A; text-align: center; margin-bottom: 5px;">⚖️ AVISO IMPORTANTE</p>
-        <p style="font-size: 14px; color: #2C3E50; margin-bottom: 10px;">
-            El Oráculo es gratuito para descifrar tu vibración. Para mantener la armonía, contamos con un <b>cupo limitado de consultas diarias</b>.
+    <div style="background-color: #FFF9E6; padding: 15px; border-radius: 8px; border: 1px solid #E6D5A7;">
+        <p style="font-weight: bold; color: #8E6D1A; text-align: center; margin-bottom: 8px; font-size: 17px;">⚖️ AVISO IMPORTANTE</p>
+        <p style="font-size: 15px; margin-bottom: 10px; text-align: justify;">
+            El Oráculo de Delfos es un espacio gratuito para descifrar la vibración de los números en tu vida. Para mantener la armonía del sistema, contamos con un cupo limitado de consultas diarias.
         </p>
-        <p style="font-size: 15px; text-align: center; color: #B8860B; font-weight: bold;">
-            <i>Si has alcanzado el límite, las frecuencias han completado su ciclo. ¡Vuelve más tarde!</i>
+        <p style="font-size: 16px; text-align: center; color: #B8860B; font-weight: bold; margin-top: 10px;">
+            Si has alcanzado el límite, las frecuencias han completado su ciclo. ¡Vuelve más tarde para una nueva lectura!
         </p>
     </div>
 </div>
 '''
 
-st.markdown(mensaje_limpio, unsafe_allow_html=True)
+# La clave mágica es esta línea:
+st.markdown(mensaje_final, unsafe_allow_html=True)
 
 
 
