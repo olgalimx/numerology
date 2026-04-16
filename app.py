@@ -225,7 +225,7 @@ if boton:
 
 st.write("---") # Una línea divisoria sutil
 st.write("¿Deseas profundizar en tu partitura numérica?")
-st.link_button("Solicitar Lectura Completa", "mailto:tu-correo@ejemplo.com")
+st.link_button("Solicitar lectura completa sin ningún costo", "mailto:tu-correo@ejemplo.com")
 
 
 #Para mostrar el contador de visitas
