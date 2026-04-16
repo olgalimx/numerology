@@ -122,7 +122,7 @@ st.markdown(
             🏛️ El Oráculo de Delfos
         </h1>
         <p style="color: #708090; font-style: italic; margin-top: -10px; font-size: 18px;">
-            Descubre la melodía de tu esencia; tú diriges la obra
+            Conócete a ti mismo. Tú diriges tu historia.
         </p>
     </div>
     """, 
