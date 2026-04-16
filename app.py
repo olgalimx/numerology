@@ -35,8 +35,6 @@ LETRA_A_NUM = {letra: num for num, letras in PITAGORICA.items() for letra in let
 VOCALES = set("AEIOU")
 
 
-
-
 # -------------------------
 # FUNCIONES AUXILIARES
 # -------------------------
@@ -76,10 +74,8 @@ def valor_nombre(nombre, tipo="total"):
 
     return reducir_numero(total)
 
-# -------------------------
-# NUEVA FUNCIÓN: Life Path
-# -------------------------
 
+#Cálculo de la misión de vida
 def calcular_mision_vida(fecha_nacimiento):
     """
     fecha_nacimiento en formato 'YYYY-MM-DD'
@@ -114,7 +110,17 @@ def perfil_numerologico(nombre_completo, fecha_nacimiento):
 
 # Configuración de la página
 st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
-st.title("🏛️ Oráculo de Delfos")
+#st.title("🏛️ Oráculo de Delfos")
+st.markdown(
+    """
+    <h1 style='text-align: center; color: #B8860B; font-family: serif;'>
+        🏛️ El Oráculo de Delfos
+    </h1>
+    """, 
+    unsafe_allow_html=True
+)
+
+
 # Definimos el contenido
 html_content = """
 <div style="background-color: #FDFBF7; padding: 20px; border: 2px solid #D4AF37; border-radius: 12px; font-family: serif; color: #2C3E50;">
