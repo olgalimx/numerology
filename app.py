@@ -34,6 +34,56 @@ LETRA_A_NUM = {letra: num for num, letras in PITAGORICA.items() for letra in let
 
 VOCALES = set("AEIOU")
 
+# Mensaje embellecido para El Oráculo de Delfos
+mensaje_oraculo = """
+<div style="
+    background-color: #fdfbf7; 
+    padding: 25px; 
+    border-radius: 15px; 
+    border-left: 5px solid #d4af37; 
+    border-right: 5px solid #d4af37;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.05);
+    font-family: 'serif';
+    color: #2c3e50;
+    line-height: 1.6;
+">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <span style="font-size: 28px; font-weight: bold; color: #b8860b; letter-spacing: 2px; text-transform: uppercase;">
+            🏛️ Tu Privacidad es Sagrada
+        </span>
+        <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, #d4af37, transparent); margin-top: 10px;">
+    </div>
+
+    <p style="font-size: 18px; text-align: center; font-style: italic; color: #5d6d7e;">
+        "Esta herramienta ha sido diseñada bajo el principio de <strong>anonimato total</strong>."
+    </p>
+
+    <div style="margin: 20px 0; font-size: 16px;">
+        <p>✨ <strong>Efimeridad Numérica:</strong> Los nombres y fechas que ingresas solo existen durante los segundos que dura el cálculo.</p>
+        <p>🛡️ <strong>Sin Registros:</strong> No almacenamos ni registramos tu información personal. Tu rastro se borra con el viento de Delfos.</p>
+    </div>
+
+    <div style="background-color: #fff9e6; padding: 15px; border-radius: 10px; border: 1px dashed #d4af37;">
+        <p style="font-size: 17px; font-weight: bold; color: #8e6d1a; margin-bottom: 8px; text-align: center;">
+            ⚖️ AVISO IMPORTANTE
+        </p>
+        <p style="font-size: 15px; margin-bottom: 10px;">
+            El Oráculo de Delfos es un espacio de <strong>acceso gratuito</strong> dedicado a descifrar la vibración de los números en tu vida.
+        </p>
+        <p style="font-size: 15px;">
+            Para mantener la precisión de los cálculos y la armonía del sistema, nuestro modelo cuenta con un <strong>cupo limitado de consultas diarias</strong>.
+        </p>
+        <p style="font-size: 16px; margin-top: 15px; text-align: center; color: #b8860b; font-weight: bold;">
+            <i>Si has alcanzado el límite, significa que las frecuencias numéricas han completado su ciclo por hoy. Las puertas del templo se abrirán nuevamente para ti muy pronto.</i>
+        </p>
+    </div>
+</div>
+"""
+
+
+
+
+
 # -------------------------
 # FUNCIONES AUXILIARES
 # -------------------------
@@ -114,14 +164,8 @@ st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 st.title("🏛️ Oráculo de Delfos")
 
 # --- UBICACIÓN A: Justo después del título (Visibilidad inmediata) ---
-st.caption("""
-    ✨**Tu privacidad es sagrada:** Esta herramienta ha sido diseñada bajo el principio de **anonimato total**.  
-    Los nombres y fechas que ingresas solo existen durante los segundos que dura el cálculo.  
-    **No almacenamos ni registramos tu información personal.**  
-    **Aviso importante**: El Oráculo de Delfos es un espacio de acceso gratuito dedicado a descifrar la vibración de los números en tu vida.
-    Para mantener la precisión de los cálculos y la armonía del sistema, nuestro modelo cuenta con un cupo limitado de consultas diarias. 
-    Si has recibido el aviso de límite alcanzado, significa que las frecuencias numéricas del momento han completado su ciclo.  
-    """)
+st.markdown(mensaje_oraculo, unsafe_allow_html=True)
+
 st.write("Descubre tu perfil desde una mirada empática y positiva. Es importante que introduzcas tu nombre tal y como aparece en tu certificado de nacimiento.")
 
 # FORMULARIO DE ENTRADA
