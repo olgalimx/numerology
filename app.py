@@ -151,7 +151,7 @@ html_responsivo = """
     <hr style="border: 0; border-top: 1px solid #C0C0C0;">
 
     <div style="font-size: 14px;">
-        <p>✨ <b>Efimeridad:</b> Los datos solo existen durante el cálculo.</p>
+        <p>🤫 <b>Efimeridad:</b> Los datos solo existen durante el cálculo.</p>
         <p>🛡️ <b>Sin Registros:</b> Tu rastro se borra con el viento de Delfos.</p>
     </div>
 
