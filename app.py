@@ -34,11 +34,6 @@ LETRA_A_NUM = {letra: num for num, letras in PITAGORICA.items() for letra in let
 
 VOCALES = set("AEIOU")
 
-import streamlit as st
-
-import streamlit as st
-
-import streamlit as st
 
 # Usamos r''' para que Python lea el texto de forma literal y pura
 mensaje_final = r'''
