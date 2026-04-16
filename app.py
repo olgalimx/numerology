@@ -142,7 +142,7 @@ html_responsivo = """
     max-width: 95%; /* Evita que choque con los bordes del móvil */
     margin: auto;
 ">
-    <h2 style="color: #4B0082; text-align: center; font-size: 22px;">🏛️ Tu Privacidad es Sagrada</h2>
+    <h2 style="color: #4B0082; text-align: center; font-size: 22px;">🌫️ Tu Privacidad es Sagrada</h2>
     
     <p style="text-align: center; font-style: italic; font-size: 16px;">
         "Anonimato total en cada cálculo."
