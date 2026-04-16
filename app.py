@@ -46,7 +46,7 @@ mensaje_final = '''
     padding: 20px; 
     border: 2px solid #D4AF37; 
     border-radius: 12px;
-    font-family: 'serif';
+    font-family: serif;
     color: #2C3E50;
 ">
     <h2 style="color: #B8860B; text-align: center; margin-top: 0;">🏛️ Tu Privacidad es Sagrada</h2>
