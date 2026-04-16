@@ -222,7 +222,12 @@ if boton:
             else:
                 # Otros errores (conexión, etc.)
                 st.error(f"Hubo una interrupción en la señal estelar: {e}")
-        
+
+st.write("---") # Una línea divisoria sutil
+st.write("¿Deseas profundizar en tu partitura numérica?")
+st.link_button("Solicitar Lectura Completa", "mailto:tu-correo@ejemplo.com")
+
+
 #Para mostrar el contador de visitas
 st.write("---")
 col1, col2, col3 = st.columns([1, 1, 1])
@@ -233,6 +238,3 @@ with col2:
     url_final = f"https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2F{user_repo}.json&label=Visitas&color=gold&style=flat-square"
     st.markdown(f"[![Visitas]({url_final})](https://hits.dwyl.com/{user_repo})")
     
-st.write("---") # Una línea divisoria sutil
-st.write("¿Deseas profundizar en tu partitura numérica?")
-st.link_button("Solicitar Lectura Completa", "mailto:tu-correo@ejemplo.com")
