@@ -34,16 +34,43 @@ LETRA_A_NUM = {letra: num for num, letras in PITAGORICA.items() for letra in let
 
 VOCALES = set("AEIOU")
 
-# Mensaje embellecido para El Oráculo de Delfos
-diseno = """
-<div style="color: gold; background-color: black; padding: 20px; border-radius: 10px;">
-    <h1>El Oráculo de Delfos</h1>
-    <p>Si lees esto con colores, ¡ha funcionado!</p>
+import streamlit as st
+
+# Versión optimizada y robusta
+mensaje_limpio = """
+<div style="
+    background-color: #FDFBF7; 
+    padding: 20px; 
+    border: 2px solid #D4AF37; 
+    border-radius: 10px;
+    font-family: 'serif';
+">
+    <h2 style="color: #B8860B; text-align: center; margin-top: 0;">🏛️ Tu Privacidad es Sagrada</h2>
+    
+    <p style="text-align: center; font-style: italic; color: #5D6D7E; font-size: 1.1em;">
+        "Esta herramienta ha sido diseñada bajo el principio de <b>anonimato total</b>."
+    </p>
+
+    <hr style="border: 0; border-top: 1px solid #D4AF37;">
+
+    <ul style="list-style-type: '✨ '; color: #2C3E50; font-size: 15px;">
+        <li><b>Efimeridad Numérica:</b> Los nombres y fechas ingresados solo existen durante el cálculo.</li>
+        <li><b>Sin Registros:</b> No almacenamos tu información personal. Tu rastro se borra con el viento de Delfos.</li>
+    </ul>
+
+    <div style="background-color: #FFF9E6; padding: 15px; border-radius: 8px; margin-top: 20px;">
+        <p style="font-weight: bold; color: #8E6D1A; text-align: center; margin-bottom: 5px;">⚖️ AVISO IMPORTANTE</p>
+        <p style="font-size: 14px; color: #2C3E50; margin-bottom: 10px;">
+            El Oráculo es gratuito para descifrar tu vibración. Para mantener la armonía, contamos con un <b>cupo limitado de consultas diarias</b>.
+        </p>
+        <p style="font-size: 15px; text-align: center; color: #B8860B; font-weight: bold;">
+            <i>Si has alcanzado el límite, las frecuencias han completado su ciclo. ¡Vuelve más tarde!</i>
+        </p>
+    </div>
 </div>
 """
 
-# 2. Renderizarlo con el permiso activado
-st.markdown(diseno, unsafe_allow_html=True)
+st.markdown(mensaje_limpio, unsafe_allow_html=True)
 
 
 
