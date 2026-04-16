@@ -37,7 +37,7 @@ VOCALES = set("AEIOU")
 import streamlit as st
 
 # Versión optimizada y robusta
-mensaje_limpio = """
+mensaje_limpio = '''
 <div style="
     background-color: #FDFBF7; 
     padding: 20px; 
@@ -68,7 +68,7 @@ mensaje_limpio = """
         </p>
     </div>
 </div>
-"""
+'''
 
 st.markdown(mensaje_limpio, unsafe_allow_html=True)
 
