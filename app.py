@@ -113,9 +113,20 @@ st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 #st.title("🏛️ Oráculo de Delfos")
 st.markdown(
     """
-    <h1 style='text-align: center; color: #B8860B; font-family: serif;'>
-        🏛️ El Oráculo de Delfos
-    </h1>
+    <div style="text-align: center; padding: 10px;">
+        <h1 style="
+            color: #4B0082; 
+            font-family: 'Georgia', serif; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        ">
+            🌌 El Oráculo de Delfos
+        </h1>
+        <p style="color: #708090; font-style: italic; margin-top: -10px; font-size: 18px;">
+            Donde los números revelan el destino
+        </p>
+    </div>
     """, 
     unsafe_allow_html=True
 )
