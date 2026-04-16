@@ -206,8 +206,10 @@ if boton:
             5. Finaliza con una frase corta en un bloque de cita (> ) que sirva como mantra.
             6. Canaliza un mensaje inspirador y esperanzador para el consultante
                 Usa negritas para resaltar las palabras con mayor carga positiva.
-            7. Menciona los análisis adicionales que puedes hacer para una lectura más completa e invita al consultante
-               a hacer clic en el botón para solicitar una lectura más completa sin costo.
+            7. Menciona los análisis adicionales de desafíos y pináculos que puedes hacer, así como el análisis de compatibilidad
+               con otras personas basado en su perfil numerológico, e invitalos a hacer clic en el botón que se incluye en la 
+               página al final, no lo incluyas tú, este botón ya está incorporado en la página.
+               
             """
             # 3. Llamada a Gemini
             response = model.generate_content(prompt)
