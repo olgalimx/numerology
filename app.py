@@ -43,7 +43,7 @@ mensaje_limpio = '''
     padding: 20px; 
     border: 2px solid #D4AF37; 
     border-radius: 10px;
-    font-family: 'serif';
+    font-family: "serif";
 ">
     <h2 style="color: #B8860B; text-align: center; margin-top: 0;">🏛️ Tu Privacidad es Sagrada</h2>
     
@@ -53,7 +53,7 @@ mensaje_limpio = '''
 
     <hr style="border: 0; border-top: 1px solid #D4AF37;">
 
-    <ul style="list-style-type: '✨ '; color: #2C3E50; font-size: 15px;">
+    <ul style="list-style-type: "✨ "; color: #2C3E50; font-size: 15px;">
         <li><b>Efimeridad Numérica:</b> Los nombres y fechas ingresados solo existen durante el cálculo.</li>
         <li><b>Sin Registros:</b> No almacenamos tu información personal. Tu rastro se borra con el viento de Delfos.</li>
     </ul>
