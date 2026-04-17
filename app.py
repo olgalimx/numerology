@@ -122,6 +122,10 @@ st.markdown(
             🏛️ El Oráculo de Delfos
         </h1>
         <p style="color: #708090; font-style: italic; margin-top: -10px; font-size: 18px;">
+            Desde tiempos antiguos, los números han sido vistos como símbolos que revelan lo invisible.
+            A partir de tu nombre y tu fecha de nacimiento, es posible reconocer patrones que hablan de tu
+            esencia, tus ciclos y tus aprendizajes. 
+            Este oráculo no dicta tu destino… solo te muestra un reflejo para que puedas mirarte con mayor claridad.
             Conócete a ti mismo. Tú diriges tu historia.
         </p>
     </div>
