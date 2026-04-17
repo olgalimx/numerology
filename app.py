@@ -182,7 +182,7 @@ st.write("Descubre tu perfil desde una mirada empática y positiva. Es important
 with st.form("datos_usuario"):
     nombre = st.text_input("Nombre completo")
     fecha = st.date_input(
-    "Selecciona o introduce directamente tu fecha de nacimiento en formato año-mes-día",
+    "Selecciona o introduce directamente tu fecha de nacimiento en formato año-mes-día, por favor verifica que sea correcta.",
     value=date(2000, 1, 1), 
     min_value=fecha_minima,
     max_value=fecha_maxima
