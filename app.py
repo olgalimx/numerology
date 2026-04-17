@@ -225,11 +225,11 @@ if boton:
             #st.markdown(response.text)
             st.markdown(f"""
                 <div style="
-                    color: #5A0FBF;
+                    color: #C9A646;
                     font-family: 'Georgia', serif;
                     font-size: 20px;
                     line-height: 1.8;
-                    text-align: center;
+                    text-align: justify;
                     margin-top: 30px;
             ">
                 {response.text}
