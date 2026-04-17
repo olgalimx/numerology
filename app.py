@@ -111,13 +111,17 @@ def perfil_numerologico(nombre_completo, fecha_nacimiento):
 st.set_page_config(page_title="Oráculo de Delfos", page_icon="✨")
 st.markdown(
     """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+    </style>
+
     <div style="text-align: center; padding: 10px;">
         <h1 style="
             color: #5A0FBF; 
-            font-family: 'Georgia', serif; 
+            font-family: 'Cinzel', serif; 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            letter-spacing: 4px;
+            
         ">
             🏛️ El Oráculo de Delfos
         </h1>
