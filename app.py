@@ -222,7 +222,22 @@ if boton:
         
             # 4. Muestra el resultado (Streamlit renderiza Markdown por defecto)
             st.markdown("---")
-            st.markdown(response.text)
+            #st.markdown(response.text)
+            st.markdown(f"""
+                <div style="
+                    color: #5A0FBF;
+                    font-family: 'Georgia', serif;
+                    font-size: 20px;
+                    line-height: 1.8;
+                    text-align: center;
+                    margin-top: 30px;
+            ">
+                {response.text}
+                </div>
+            """, unsafe_allow_html=True)
+
+
+        
         except Exception as e:
             # Si el error es por exceso de uso (Código 429)
             if "429" in str(e) or "ResourceExhausted" in str(e):
