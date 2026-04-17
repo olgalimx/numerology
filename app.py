@@ -113,7 +113,7 @@ st.markdown(
     """
     <div style="text-align: center; padding: 10px;">
         <h1 style="
-            color: #4B0082; 
+            color: #5A0FBF; 
             font-family: 'Georgia', serif; 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             letter-spacing: 3px;
