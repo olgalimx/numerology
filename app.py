@@ -120,8 +120,7 @@ st.markdown(
             color: #5A0FBF; 
             font-family: 'Cinzel', serif; 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            letter-spacing: 4px;
-            
+            letter-spacing: 4px;          
         ">
             🏛️ El Oráculo de Delfos
         </h1>
