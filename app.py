@@ -125,35 +125,9 @@ st.markdown(
             Conócete a ti mismo. Tú diriges tu historia.
         </p>
     </div>
-
-    <div style="
-        text-align: center; 
-        font-family: 'Georgia', serif; 
-        line-height: 1.8; 
-        font-size: 18px; 
-        color: #3a3a3a; 
-        max-width: 700px; 
-        margin: 30px auto;
-    ">
-
-        <p>
-        Desde tiempos antiguos, los números han sido vistos como símbolos que reflejan el orden profundo de la vida.
-        </p>
-
-        <p>
-        La numerología no predice tu destino: revela patrones, aprendizajes y posibilidades que habitan en ti, a partir de tu nombre y tu fecha de nacimiento.
-        </p>
-
-        <p style="margin-top: 20px; font-style: italic;">
-        En este oráculo, cada número es un espejo.<br>
-        Lo que encuentres en él no busca decirte quién eres, sino recordarte lo que ya vive en tu interior.
-        </p>
-
-    </div>
     """, 
     unsafe_allow_html=True
 )
-
 
 # Definimos el contenido con CSS adaptable
 html_responsivo = """
