@@ -225,7 +225,7 @@ if boton:
             #st.markdown(response.text)
             st.markdown(f"""
                 <div style="
-                    color: #0B3D91;
+                    color: #333333;
                     font-family: 'Georgia', serif;
                     font-size: 20px;
                     line-height: 1.8;
